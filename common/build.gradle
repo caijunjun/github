@@ -1,0 +1,11 @@
+apply plugin: 'war'
+apply plugin: 'jetty'//jetty插件
+
+dependencies {
+    compile project(':core')
+    compile project(':utils')
+}
+jettyRun {//jetty插件
+   reload = "automatic"
+   scanIntervalSeconds = 10
+}

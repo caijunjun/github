@@ -1,0 +1,13 @@
+apply plugin: 'war'
+apply plugin: 'jetty'//jetty插件
+
+dependencies {
+    compile project(':core')
+    compile project(':utils')
+	compile ("org.springframework:spring-webmvc:$springVersion")  
+}
+
+jettyRun {//jetty插件
+   reload = "automatic"
+   scanIntervalSeconds = 10
+}

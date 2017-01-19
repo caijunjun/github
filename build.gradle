@@ -1,0 +1,74 @@
+buildscript {//模板插件
+    repositories {
+        maven {
+            url 'http://dl.bintray.com/cjstehno/public'
+        }
+    }
+    dependencies {
+        classpath 'gradle-templates:gradle-templates:1.4'
+    }
+}
+
+
+
+subprojects {//通用配置
+	apply plugin: 'templates'//模板插件
+	apply plugin: 'java'   	//使用 Java 插件
+	apply plugin: 'maven'   	//使用 maven 插件
+	apply plugin: 'eclipse-wtp'	//使用 eclipse 插件
+	apply plugin: 'war'//war打包插件
+	apply plugin: 'groovy'//groovy插件
+	
+	//定义版本号
+    ext {  
+        springVersion = '4.3.5.RELEASE'   
+        env = System.getProperty('env') ?: 'dev'
+    } 
+	
+	
+	//定制 MANIFEST.MF 文件 start
+	sourceCompatibility = 1.8
+	version = '1.0'
+	jar {
+	    manifest {
+	        attributes 'Implementation-Title': 'Gradle Quickstart', 'Implementation-Version': version
+	    }
+	}
+	//定制 MANIFEST.MF 文件 end
+	
+	repositories {//加入maven仓库
+		maven { url "http://maven.aliyun.com/nexus/content/groups/public" }//阿里云仓库
+		maven { url "https://repo.spring.io/libs-release" }//spring仓库
+		mavenLocal()//本地仓库
+		mavenCentral()//maven中心仓库
+	}
+	
+	dependencies {//加入依赖
+	
+		// https://mvnrepository.com/artifact/ch.qos.logback/logback-classic
+		compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.1.7'//引入日志管理
+				
+	    testCompile group: 'junit', name: 'junit', version: '4.+'
+	}
+	
+	
+	test {//测试阶段加入一个系统属性
+	    //systemProperties 'property': 'value'
+	}
+	
+	uploadArchives {//发布jar包
+	    repositories {
+	       flatDir {
+	           dirs 'repos'//可以是本地也可以是远程
+	       }
+	    }
+	}
+	
+	sourceSets {  
+    main {
+        resources {
+            srcDirs = ["src/main/resources/conf", "src/main/resources/conf-$env"]
+        }
+    }
+}
+}
