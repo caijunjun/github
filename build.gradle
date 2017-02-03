@@ -45,6 +45,7 @@ subprojects {//通用配置
 		mavenCentral()//maven中心仓库
 	}
 	
+	
 	dependencies {//加入依赖
 	
 		// https://mvnrepository.com/artifact/ch.qos.logback/logback-classic
