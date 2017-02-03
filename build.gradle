@@ -65,7 +65,6 @@ subprojects {//通用配置
 	    }
 	}
 	
-	
 	task copyConfiguration << {//将不同环境下的个性化配置拷贝到resources目录下(覆盖)
 	    copy {
 	        from "src/main/environment/$env"
