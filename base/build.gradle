@@ -4,7 +4,8 @@ apply plugin: 'jetty'//jetty插件
 dependencies {
     compile project(':core')
     compile project(':utils')
-	compile ("org.springframework:spring-webmvc:$springVersion")  
+	compile ("org.springframework:spring-webmvc:$springVersion")
+	compile ("org.springframework:spring-test:$springVersion")   
 }
 
 jettyRun {//jetty插件

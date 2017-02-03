@@ -8,7 +8,8 @@ public class Demo {
 	
 	public static void print(){
 		System.out.println("hello world");
-		
+		Demo.class.getResource("/");
+		logger.info(Demo.class.getResource("/").toString());
 		logger.info("info");
 		logger.warn("warn");
 		logger.error("error");

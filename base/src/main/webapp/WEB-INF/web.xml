@@ -4,7 +4,7 @@
     "http://java.sun.com/dtd/web-app_2_3.dtd">
 
 <web-app>
-   <!-- General description of your web application -->
+	<!-- General description of your web application -->
    <display-name>base - Webapp</display-name>
       <description>
          Describe the base Webapp here.
@@ -13,4 +13,14 @@
          See http://tomcat.apache.org/tomcat-6.0-doc/appdev/web.xml.txt for more information
          regarding this Web Descriptor File.
    </description>
+	<!-- Spring监听器 -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<!-- 防止Spring内存溢出监听器 -->
+	<listener>
+		<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+	</listener>
+
+   
 </web-app>
