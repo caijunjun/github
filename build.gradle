@@ -57,6 +57,7 @@ subprojects {//通用配置
 	
 	
 	uploadArchives {//发布jar包
+	
 	    repositories {
 	       flatDir {
 	           dirs 'repos'//可以是本地也可以是远程

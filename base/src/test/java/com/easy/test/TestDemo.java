@@ -28,6 +28,7 @@ public class TestDemo {
 	public void test() {
 		Properties properties = new Properties();
 		try {
+			
 			ClassPathResource resource = new ClassPathResource("/config.properties", TestDemo.class);
 			properties=PropertiesLoaderUtils.loadProperties(resource);
 		} catch (IOException e) {
