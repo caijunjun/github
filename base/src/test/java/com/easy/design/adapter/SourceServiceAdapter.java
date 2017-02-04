@@ -1,5 +1,7 @@
 package com.easy.design.adapter;
 
+import com.easy.design.SourceService;
+
 /**
  * 
  * @Title: SourceServiceAdapter.java 

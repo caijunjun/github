@@ -1,4 +1,4 @@
-package com.easy.design.adapter;
+package com.easy.design;
 
 public interface SourceService {
 

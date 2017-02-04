@@ -1,4 +1,7 @@
 package com.easy.design.adapter;
+
+import com.easy.design.SourceService;
+
 /**
  * 
  * @Title: SourceServiceObjectAdapter.java 
@@ -27,7 +30,7 @@ public class SourceServiceObjectAdapterImpl implements SourceServiceAdapter {
 
 	@Override
 	public void send() {
-		System.out.println("SourceServiceObjectAdapterImpl send");
+		System.out.println("SourceServiceDecoratorImpl send");
 		
 	}
 
